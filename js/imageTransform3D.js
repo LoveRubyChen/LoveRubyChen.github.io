@@ -183,7 +183,7 @@ ge1doot.transform3D.Triangle.prototype.draw = function () {
 			 (this.p0.tx * (t4 - t6) + this.p0.ty * (t8 - t9) + this.pxy * this.p0.Y) / this.d  // dy
 		);
 		// ---- draw ----
-		this.ctx.drawImage(this.texture, 0, 0);
+		this.ctx.drawImage(this.texture, 0, 0, 640, 386);
 		this.ctx.restore();
 	}
 	return this.next;
@@ -224,8 +224,8 @@ ge1doot.transform3D.Image.prototype.loading = function () {
 		var dir = [0,1,1,0,0,0,1,1];
 		this.isLoading = false;
 		// ---- image size ----
-		this.textureWidth = this.texture.width;
-		this.textureHeight = this.texture.height;
+		this.textureWidth = this.texture.width = 640;
+		this.textureHeight = this.texture.height = 386;
 		// ---- isLoaded callback ---
 		this.callback && this.callback.isLoaded && this.callback.isLoaded(this);
 		// ---- texture position ----
